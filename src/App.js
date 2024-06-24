@@ -1,25 +1,27 @@
-import { useState } from 'react';
-import './App.css';
-import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from './consts.js';
-
+import { useState } from 'react'
+import './App.css'
+import Skills from './Skills.js'
+import Attributes from './Attributes.js'
+import Classes from './Classes.js'
 
 function App() {
-  const [num, setNum] = useState(0);
+  const [attributes, setAttributes] = useState({
+    Strength: 10,
+    Dexterity: 10,
+    Constitution: 10,
+    Intelligence: 10,
+    Wisdom: 10,
+    Charisma: 10,
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>React Coding Exercise</h1>
-      </header>
-      <section className="App-section">
-        <div>
-          Value:
-          {num}
-          <button>+</button>
-          <button>-</button>
-        </div>
-      </section>
+      <div className='container'>
+        <Attributes attributes={attributes} setAttributes={setAttributes} />
+        <Classes attributes={attributes} />
+        <Skills attributes={attributes}/>
+      </div>
     </div>
-  );
-}
+  )}
 
-export default App;
+export default App

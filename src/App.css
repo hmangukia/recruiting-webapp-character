@@ -44,3 +44,12 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  flex: 1;
+}
